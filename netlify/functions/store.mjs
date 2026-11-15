@@ -20,7 +20,7 @@ const same = (a, b) => {
 };
 
 export default async (req) => {
-  const store = getStore("shop");
+  const store = getStore({ name: "shop", consistency: "strong" });
   const auth = await store.get("auth");
 
   if (req.method === "GET") {
